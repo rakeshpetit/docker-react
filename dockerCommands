@@ -12,6 +12,9 @@ docker-compose up
 docker run f1eda0b0159e npm run test
 docker run -it f1eda0b0159e npm run test
 
+//Get test coverage
+docker run f1eda0b0159e npm run test -- --coverage
+
 //Running tests using docker-compose
 docker-compose up --build
 
