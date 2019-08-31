@@ -13,8 +13,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    environment:
-      - CI=true
     volumes:
       - /app/node_modules
       - .:/app
