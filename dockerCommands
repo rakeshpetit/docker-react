@@ -1,11 +1,13 @@
-//Build App using Dockerfile
+//Part 1
+//Run App using Dockerfile
 docker build -f Dockerfile.dev .
-docker run -p 3000:3000 $containerName
+docker run -p 3000:3000 $containerId
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app f2bcbc
 
-//Build App using docker-compose
+//Run App using docker-compose
 docker-compose up
 
+//Part 2
 //Running tests using Dockerfile
 docker run f1eda0b0159e npm run test
 docker run -it f1eda0b0159e npm run test
@@ -15,4 +17,10 @@ docker-compose up --build
 
 //Checking the tests container
 docker ps
-docker exec -it $containerName sh
+docker exec -it $containerId sh
+
+//Part 3
+//Build final projet using nginx
+//Build App using Dockerfile
+docker build .
+docker run -p 8080:80 $containerId
