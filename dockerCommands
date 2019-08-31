@@ -14,6 +14,8 @@ docker run -it f1eda0b0159e npm run test
 
 //Get test coverage
 docker run f1eda0b0159e npm run test -- --coverage
+//To exit immediately after running
+docker run -e CI=true f1eda0b0159e npm run test -- --coverage
 
 //Running tests using docker-compose
 docker-compose up --build
